@@ -1,0 +1,29 @@
+{
+    "name": "抢购小米手机",
+    "description": "抢购小米手机",
+    "manifest_version": 2,
+    "version": "1.0.0",
+    "icons": {
+        "16": "images/icon.png",
+        "48": "images/icon.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "images/icon_19.png",
+            "38": "images/icon_38.png"
+        },
+        "default_title": "抢购小米手机",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": ["scripts/utils.js", "scripts/background.js"]
+    },
+    "content_scripts": [{
+        "matches": ["https://*.mi.com/*", "http://*.mi.com/*"],
+        "js": ["scripts/utils.js", "scripts/content.js"]
+    }],
+    "permissions": [
+        "storage",
+        "tabs"
+    ]
+}
