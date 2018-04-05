@@ -1,6 +1,6 @@
 {
     "name": "抢购小米手机",
-    "description": "抢购小米手机",
+    "description": "使用教程：先打开要购买的小米手机页面，登录，选择好颜色尺寸，然后点击插件图标，设置抢购时间就可以了。提示：每次进入页面或者刷新页面都需要重新设置时间",
     "manifest_version": 2,
     "version": "1.0.0",
     "icons": {
@@ -15,12 +15,9 @@
         "default_title": "抢购小米手机",
         "default_popup": "popup.html"
     },
-    "background": {
-        "scripts": ["scripts/utils.js", "scripts/background.js"]
-    },
     "content_scripts": [{
-        "matches": ["https://*.mi.com/*", "http://*.mi.com/*"],
-        "js": ["scripts/utils.js", "scripts/content.js"]
+        "matches": ["*://item.mi.com/product/*"],
+        "js": ["scripts/content.js"]
     }],
     "permissions": [
         "storage",
